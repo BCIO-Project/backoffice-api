@@ -1,0 +1,31 @@
+runtime: nodejs12
+service: {{SERVICE}}
+
+instance_class: F1
+automatic_scaling:
+  min_instances: 1
+  max_instances: 100
+  min_pending_latency: 300ms
+  max_pending_latency: automatic
+  max_concurrent_requests: 500
+
+
+vpc_access_connector:
+  name: "projects/{{GCP_PROJECT_ID}}/locations/{{GCP_LOCATION}}/connectors/vpc-redis"
+
+env_variables:
+  NODE_ENV: '{{ENVIROMENT}}'
+  DB_PASSWORD: '{{DB_PASSWORD}}'
+  DB_DATABASE: '{{DB_DATABASE}}'
+  DB_USERNAME: '{{DB_USERNAME}}'
+  DB_HOST: '{{DB_HOST}}'
+  REDIS_HOST: '{{REDIS_HOST}}'
+  REDIS_PORT: '{{REDIS_PORT}}'
+  REDIS_TTL: '{{REDIS_TTL}}'
+  PROJECT_ID: '{{GCP_PROJECT_ID}}'
+  BUCKET_NAME: '{{BUCKET_NAME}}'
+  SECRET_OR_KEY: '{{SECRET_OR_KEY}}'
+
+
+
+

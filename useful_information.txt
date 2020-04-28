@@ -1,0 +1,50 @@
+
+
+
+SEQUELIZE
+
+
+
+ Model generations
+
+npx sequelize-cli model:generate --name Page --attributes name:string
+
+npx sequelize-cli model:generate --name Template --attributes name:string,height:integer,weight:integer
+
+
+ Migrations
+
+npx sequelize migration:create --name add_slug_to_page
+
+npx sequelize-cli db:migrate
+
+npx sequelize-cli db:migrate:undo
+
+ Seeds
+
+npx sequelize-cli seed:generate --name demo-user
+npx sequelize-cli db:seed:all
+npx sequelize-cli db:seed --seed ./path_to_file
+
+
+BIGQUERY
+
+INSERT INTO `bcio-dev.bcio_event_data.events` (messageId, eventType, campaignId, userId, offerId, impressionUUId, domain, ip, createdAt)
+VALUES ('1241234332221', 'click', 92, 'xxxx-xxxx-xxxx', 41, 'gsddgfsdfs', 'www.elpais.com', '62.82.24.134', CURRENT_DATETIME());
+
+INSERT INTO `bcio-dev.bcio_event_data.events` (messageId, eventType, campaignId, userId, offerId, impressionUUId, domain, ip, createdAt)
+VALUES ('1241234332222', 'impression', 92, 'xxxx-xxxx-xxxx', 41, 'gsdfsgfs', 'www.elpais.com', '62.82.24.134', CURRENT_DATETIME());
+
+INSERT INTO `bcio-dev.bcio_event_data.events` (messageId, eventType, campaignId, userId, offerId, impressionUUId, domain, ip, createdAt)
+VALUES ('1241234332223', 'impression', 92, 'xxxx-xxxx-xxxx', 41, 'sdfgsdf', 'www.elpais.com', '62.82.24.134', CURRENT_DATETIME());
+
+INSERT INTO `bcio-dev.bcio_event_data.events` (messageId, eventType, campaignId, userId, offerId, impressionUUId, domain, ip, createdAt)
+VALUES ('1241234332224', 'click', 120, 'xxxx-xxxx-xxxx',42, 'sdfgsdfg', 'www.elpais.com', '62.82.24.134', CURRENT_DATETIME());
+
+INSERT INTO `bcio-dev.bcio_event_data.events` (messageId, eventType, campaignId, userId, offerId, impressionUUId, domain, ip, createdAt)
+VALUES ('1241234332225', 'impression', 120, 'xxxx-xxxx-xxxx', 42, 'sdfgdfsfgsgfds', 'www.elpais.com', '62.82.24.134', CURRENT_DATETIME());
+
+INSERT INTO `bcio-dev.bcio_event_data.events` (messageId, eventType, campaignId, userId, offerId, impressionUUId, domain, ip, createdAt)
+VALUES ('1241234332226', 'impression', 120 , 'xxxx-xxxx-xxxx', 42, 'sdfgsdfgsdfgsdfsgd', 'www.elpais.com', '62.82.24.134', CURRENT_DATETIME());
+
+
